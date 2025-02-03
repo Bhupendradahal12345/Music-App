@@ -23,6 +23,7 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
@@ -869,7 +870,7 @@ class _NowPlayingPageState extends State<NowPlayingPage> {
     ValueNotifier<bool>(isSongAlreadyOffline(audioId));
     return Wrap(
       alignment: WrapAlignment.center,
-      spacing: 200,
+      spacing: 78,
       children: [
         if (!offlineMode.value)
           ValueListenableBuilder<bool>(
@@ -881,6 +882,31 @@ class _NowPlayingPageState extends State<NowPlayingPage> {
                   size: 30.0,
                   icon: 'download',
                   data: mediaItemToMap(mediaItem)
+              );
+            },
+          ),
+        if (!offlineMode.value)
+          ValueListenableBuilder<bool>(
+            valueListenable: songOfflineStatus,
+            builder: (_, value, __) {
+              return !online
+                  ? const SizedBox()
+              :IconButton(
+                icon: Icon(
+                  size: 30,
+                  value ? CupertinoIcons.checkmark_rectangle_fill : CupertinoIcons.cloud_download,
+                  color: value ? Theme.of(context).colorScheme.secondary : Theme.of(context).iconTheme.color,
+                ),
+                iconSize: 30,
+                onPressed: () {
+                  if (value) {
+                    removeSongFromOffline(audioId);
+                  } else {
+                    makeSongOffline(mediaItemToMap(mediaItem));
+                  }
+
+                  songOfflineStatus.value = !songOfflineStatus.value;
+                },
               );
             },
           ),
@@ -922,6 +948,7 @@ class _NowPlayingPageState extends State<NowPlayingPage> {
 
   }
 }
+
 
 
 
