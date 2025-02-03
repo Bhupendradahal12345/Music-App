@@ -125,7 +125,7 @@ class AboutScreen extends StatelessWidget {
                         ,],
                       ),
                       onTap: () => launchUrl(
-                          Uri.parse('https://github.com/bhupendra1234567'),
+                          Uri.parse('https://github.com/Bhupendradahal12345'),
                           mode: LaunchMode.externalApplication,),
                     ),
                     ListTile(
@@ -148,7 +148,7 @@ class AboutScreen extends StatelessWidget {
                       ),
                       trailing: Icon(AdaptiveIcons.chevron_right),
                       onTap: () => launchUrl(
-                          Uri.parse('https://github.com/bhupendra1234567/app'),
+                          Uri.parse('https://github.com/Bhupendradahal12345/Music-App'),
                           mode: LaunchMode.externalApplication,),
                     ),
                     ListTile(
@@ -172,7 +172,7 @@ class AboutScreen extends StatelessWidget {
                       trailing: Icon(AdaptiveIcons.chevron_right),
                       onTap: () => launchUrl(
                           Uri.parse(
-                              'https://github.com/bhupendra1234567/app/issues/new?assignees=&labels=bug&projects=&template=bug_report.yaml',),
+                              'https://github.com/Bhupendradahal12345/Music-App/issues/new?assignees=&labels=bug&projects=&template=bug_report.yaml',),
                           mode: LaunchMode.externalApplication,),
                     ),
                     ListTile(
@@ -196,7 +196,7 @@ class AboutScreen extends StatelessWidget {
                       trailing: Icon(AdaptiveIcons.chevron_right),
                       onTap: () => launchUrl(
                           Uri.parse(
-                              'https://github.com/bhupendra1234567/app/issues/new?assignees=sheikhhaziq&labels=enhancement%2CFeature+Request&projects=&template=feature_request.yaml',),
+                              'https://github.com/Bhupendradahal12345/Music-App/issues/new?assignees=sheikhhaziq&labels=enhancement%2CFeature+Request&projects=&template=feature_request.yaml',),
                           mode: LaunchMode.externalApplication,),
                     ),
                     ListTile(
